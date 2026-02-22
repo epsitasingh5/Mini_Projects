@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <h1>HELLO WORLD!</h1>
-    <button>click me.</button>
-    <button>click me.</button>
-    <button>click me.</button>
-   <script src="app.js"></script> 
+    <nav>
+        <ul>
+            <li>MyTicTacToe.com</li>
+        </ul>
+    </nav>
+    <div class="msgContainer hide">
+        <div id="msg">Winner!</div>
+        <div class="imgbox">
+                <img src="excited.gif">            
+            </div>
+        <button id="newBtn">New Game</button>
+    </div>
+    <div class="gameContainer">
+        <div class="container">
+            <button class="box bl-0 bt-0"></button>
+            <button class="box bt-0"></button>
+            <button class="box br-0 bt-0"></button>
+            <button class="box bl-0"></button>
+            <button class="box"></button>
+            <button class="box br-0"></button>
+            <button class="box bl-0 bb-0"></button>
+            <button class="box bb-0"></button>
+            <button class="box br-0 bb-0"></button>
+        </div>
+        <div class="gameInfo">
+            <h1>Welcome to Tic Tac MyTicTacToe game</h1>
+            <button id="reset">Reset</button>
+            
+        </div>    
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,36 +1,45 @@
-let todo = [];
-let req = prompt("please enter your request:");
+let input = document.querySelector("input");
+let button = document.querySelector("button");
+let ul = document.querySelector("ul");
 
-while(true){
-    //if you want to quit 
-    if(req == "quit"){
-        console.log("quitting");
-        break;
-    }
 
-    //if you want to display list of taasks
-    if(req == "list"){
-        console.log("---------");
-        for(let i=0; i<todo.length; i++){
-            console.log(i, todo[i]);
-        }
-        console.log("---------");
-    }
-    //if you want to add task in your list
-    else if(req == "add"){
-        let task = prompt("enter the task you want to add");
-        todo.push(task);
-        console.log("task added");
-    }
 
-    //if you want to delete any task from the List.
+button.addEventListener("click",()=> {
+    let item = document.createElement("li");
+    let btn = document.createElement("button");
+    btn.innerText = "delete";
+    item.innerText = input.value;
+    ul.appendChild(item);
+    item.append(btn);
+    
+    console.log(input.value);
+    btn.addEventListener("click",()=>{
+    ul.removeChild(item);
+})
 
-    else if(req == "delete"){
-        let idx = prompt("enter idx of task you want to delete");
-        todo.splice(idx,1);
-        console.log("task deleted");
-    }else{
-        console.log("wrong request");
+})
+
+let url = "https://catfact.ninja/fact";
+
+async function getFacts() {
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data.fact);
+        
     }
-    req = prompt("enter your request:");
+    catch(error){
+        return "no fact found";}
 }
+
+async function getCollegenames(){
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
+        console.log(data);
+        let res = await fetch(url);
+
+        
+
+    }
